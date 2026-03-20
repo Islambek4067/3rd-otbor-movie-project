@@ -1,0 +1,198 @@
+/* ============================================
+   CinemaHub — Base Styles
+   CSS Reset + Custom Properties + Utilities
+   ============================================ */
+
+/* === RESET === */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+input {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* === CSS CUSTOM PROPERTIES (Dark Theme by default) === */
+:root {
+    /* Colors */
+    --bg-primary: #0f0f1a;
+    --bg-secondary: #1a1a2e;
+    --bg-card: #16213e;
+    --bg-header: rgba(15, 15, 26, 0.85);
+    --bg-modal: rgba(0, 0, 0, 0.8);
+    --bg-input: rgba(255, 255, 255, 0.08);
+
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b8;
+    --text-muted: #6b6b80;
+
+    --accent: #e50914;
+    --accent-hover: #ff1a25;
+    --accent-light: rgba(229, 9, 20, 0.15);
+
+    --success: #2ecc71;
+    --warning: #f39c12;
+    --star: #f1c40f;
+
+    --border: rgba(255, 255, 255, 0.08);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-full: 50%;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Z-index */
+    --z-header: 100;
+    --z-modal: 200;
+    --z-overlay: 199;
+}
+
+/* === TASK 9: Light Theme (қосуға болатын) ===
+   TODO: [data-theme="light"] селекторымен жарық тема жасаңыз
+   Мысалы:
+   [data-theme="light"] {
+       --bg-primary: #f5f5f5;
+       --text-primary: #1a1a2e;
+       ... т.б.
+   }
+*/
+
+
+/* === HEADER (Example) === */
+/* TODO: Создай свои стили для header, hero, grid, cards, и modal здесь или в отдельном файле */
+
+/* Стилизация скроллбара (опционально) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+ul{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.main-section{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0 40px;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.input-search{
+    padding: 5px 10px;
+}
+
+.add-favourite{
+    background: green;
+}
+
+.white-mode{
+    background: white;
+    color: black;
+}
+.hide{
+    display: none;
+}
+
+@media screen and (max-width:480px) {
+    .main-section{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .genre{
+        display: none !important;
+    }
+    .under-header{
+        width: auto !important;
+    }
+
+    nav{
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+}
